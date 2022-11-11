@@ -192,13 +192,20 @@ import Gif2 from "./Gif2.gif";
 import Gif3 from "./Gif3.gif";
 import Gif4 from "./Gif4.gif";
 import seo from "./seo.mp4";
+import red from "./red.png";
+import yellow from "./yellow.png";
+import green from "./green.png";
+import purple from "./purple.png";
+import check11 from "./check11.png";
+import vid1 from "./vid1.mp4";
+import vid2 from "./vid2.mp4";
 
 export {
   arrow,seo,
   FEATURES,hand2,Gif1,Gif2,Gif3,Gif4,
-  clock,
+  clock,red,yellow,green,purple,check11,vid1,
   blank,
-  ehero,
+  ehero,vid2,
   eapp,
   SEO,
   badge2,

@@ -2,7 +2,7 @@ import React from 'react'
 import { Built, CallCard, CallHero, Client, Creative, Focus, Portfolio, WebBanner } from '../components'
 import Featured from '../components/featured'
 import { langData, webBannerData, webBuiltData, webCreativeData } from '../constant';
-import { BUILT, bulb2, CREATIVE, webdev } from '../images';
+import { BUILT, bulb2, CREATIVE, vid1, webdev } from '../images';
 
 
 const Web = () => {
@@ -13,6 +13,7 @@ const Web = () => {
         title2={'Websites'}
         body={' Stand out and generate more leads. Custom Websites Starting $999*'}
         img={webdev}
+        vid={vid1}
         data={webBannerData} />
       <div className='my-10 flex items-center justify-center lg:my-0 lg:absolute  lg:left-[30%] lg:-mt-14 z-40 2xl:left-[40%]'>
         <CallCard />

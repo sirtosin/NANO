@@ -33,6 +33,7 @@ import {
   file2,
   free,
   git,
+  green,
   guard,
   half,
   hand,
@@ -56,9 +57,11 @@ import {
   Mysql,
   PHP,
   print,
+  purple,
   py,
   Rails,
   recycle,
+  red,
   rise,
   rocket,
   roller,
@@ -78,6 +81,7 @@ import {
   user2,
   woman,
   www,
+  yellow,
 } from "../images";
 
 export const mobileBannerData = [
@@ -780,5 +784,41 @@ export const blogPost = [
     subTitle: "Font sizes in UI design: The complete guide to follow",
     body: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
     img: woman,
+  },
+];
+
+
+export const priceData = [
+  {
+    id: 1,
+    title: "399",
+    subTitle: "web design",
+    content: ['1 project', '100k api access', '100mb storage access', 'custom cloud services', 'weekly reports', '7/24 support'],
+    color: '#ff6242',
+    img:red
+  },
+  {
+    id: 2,
+    title: "3",
+    subTitle: "shared hosting",
+    content: ['1 project', '100k api access', '100mb storage access', 'custom cloud services', 'weekly reports', '7/24 support'],
+    color: 'purple',
+    img:purple
+  },
+  {
+    id: 3,
+    title: "15",
+    subTitle: "business line",
+    content: ['1 project', '100k api access', '100mb storage access', 'custom cloud services', 'weekly reports', '7/24 support'],
+    color: 'green',
+    img:green
+  },
+  {
+    id: 4,
+    title: "499",
+    subTitle: "Seo/Analytics",
+    content: ['1 project', '100k api access', '100mb storage access', 'custom cloud services', 'weekly reports', '7/24 support'],
+    color: '#e69b00',
+    img:yellow
   },
 ];

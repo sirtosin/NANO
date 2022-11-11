@@ -2,7 +2,7 @@ import React from 'react'
 import { Built, CallCard, CallHero, Client, Creative, Design, Portfolio, WebBanner } from '../components'
 import Featured from '../components/featured'
 import { designData2, designData3, softBannerData, softBuiltData, softCreativeData, softLangData } from '../constant'
-import { blank, CHOOSE, code, code3, DESIGN, DIGITAL, Gif3, SOFTWARE, stand } from '../images'
+import { blank, CHOOSE, code, code3, DESIGN, DIGITAL, Gif3, SOFTWARE, stand, vid2 } from '../images'
 
 const Softaware = () => {
   return (
@@ -20,6 +20,7 @@ const Softaware = () => {
               <Built data={softBuiltData}
                   img={SOFTWARE} title={'Software Creation Process'} />
           </div>
+          <video src={vid2} className='w-full object-cover h-[400px]' autoPlay loop muted />
           <Creative
               img={DIGITAL}
               img2={stand}

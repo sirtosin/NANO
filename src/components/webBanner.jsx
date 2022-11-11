@@ -3,7 +3,7 @@ import { icon, star, star2, webdev } from '../images'
 import { motion } from 'framer-motion'
 import { PopupModal } from 'react-calendly'
 
-const WebBanner = ({ title, title2, body, img, data, btn }) => {
+const WebBanner = ({ title, title2, body, img, data, btn ,vid}) => {
   const [openModal, setOpenModal] = useState(false)
 
   return (
@@ -66,20 +66,27 @@ const WebBanner = ({ title, title2, body, img, data, btn }) => {
         )}
       </section>
       <section className="flex flex-col items-center justify-center w-full md:w-1/2 lg:w-3/4 xl:w-1/2 mb-7 lg:-mt-20 xl:-mt-3 2xl:w-1/3 2xl:mx-auto">
-        <motion.img
-          initial={{
+        {vid ?
+          <motion.video initial={{
             x: 200,
             opacity: 0,
           }}
-          whileInView={{
-            x: 0,
-            opacity: 1,
+            whileInView={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{ ease: 'easeOut', duration: 1.2 }} src={vid} className='mr-10' autoPlay loop muted />
+          :
+          <motion.img initial={{
+            x: 200,
+            opacity: 0,
           }}
-          transition={{ ease: 'easeOut', duration: 1.2 }}
-          src={img}
-          className="w-[90%]"
-          alt=""
-        />
+            whileInView={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{ ease: 'easeOut', duration: 1.2 }} src={img} className='w-[90%]' alt="" />
+        }
       </section>
       <PopupModal
         url="https://calendly.com/nanoqode/schedule-a-call"
