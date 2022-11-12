@@ -123,9 +123,9 @@ const Header = () => {
           <p className={pathname==='/blog' ? 'text-[#DA452C]' : ''} onClick={() => setNavOption('blog')}>Blog </p>
           <p className={pathname==='/about' ? 'text-[#DA452C]' : ''} onClick={() => setNavOption('about')}>About </p>
         </nav>
-        <div className='hidden xl:flex bg-[#5AA6B1] p-4 text-white w-max'>
+        <a href="tel:+18003512961" className='cursor-pointer hidden xl:flex bg-[#5AA6B1] p-4 text-white w-max'>
           +1 (800) 361-2961
-        </div>
+        </a>
         {/* mobile */}
         <div className='flex lg:hidden cursor-pointer'>
           {!menu ? <AiOutlineMenu onClick={toggle} className=' text-2xl font-bold' /> : <AiOutlineClose onClick={toggle} className='text-2xl text-red-500' />}
