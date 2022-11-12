@@ -5,14 +5,11 @@ import { priceData } from '../constant'
 import { arrow, arrow2, card, card2, card3, card4, check11, DEVELOPMENT, line, red } from '../images'
 
 const Affordable = () => {
-  const newRef = useRef()
-
+  const slider = document.getElementById('slider')
   const handleMoveNext = () => {
-   const slider = document.getElementById('slider')
     slider.scrollLeft = slider.scrollLeft + 300
   }
   const handleMovePrev = () => {
-   const slider = document.getElementById('slider')
    slider.scrollLeft = slider.scrollLeft - 300
   }
 
@@ -34,8 +31,9 @@ const Affordable = () => {
             <img className='cursor-pointer' src={arrow2} alt="" />
           </div>
         </div>
-        <section id='slider' className='overflow-x-scroll w-full scrollbar-hide  overflow-y-hidden scroll whitespace-nowrap scroll-smooth flex items-center flex-col justify-center md:grid grid-cols-2 lg:flex-row  lg:space-x-4 mb-20 ml-6'>
+        <section id='slider' className='overflow-x-scroll w-full scrollbar-hide  overflow-y-hidden scroll whitespace-nowrap scroll-smooth flex items-center flex-col justify-center md:grid grid-cols-2 lg:flex lg:flex-row  lg:space-x-4 mb-20 ml-6'>
           {priceData.map((item) =>
+            <Link to={`${item.link}`}>
             <div key={item.id} className=' z-20 relative'>
               <img src={item.img} className='w-60' alt="" />
               <div className='absolute top-2'>
@@ -59,7 +57,8 @@ const Affordable = () => {
                   border: `1px solid ${item.color}`,
                 }} className={`-bottom-[5rem] font-semibold left-14 rounded-full shadow-sm capitalize py-2 px-6 bg-white w-max border-2 absolute`}>learn more</button>
               </div>
-            </div>
+              </div>
+            </Link>
           )}
         </section>
       </section>

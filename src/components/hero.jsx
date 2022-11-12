@@ -1,5 +1,5 @@
 import React from 'react'
-import { arrow, arrow2, aws, bing, cfib, godaddy, line, mailchimp, mailgun, meta, shopify, zoho } from '../images'
+import { arrow, arrow2, aws, bing, cfib, figma, gcloud, godaddy, gpartner, high, line, mailchimp, mailgun, meta, shopify, twilo, zap, zoho } from '../images'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import 'swiper/css';
@@ -44,6 +44,30 @@ const Hero = () => {
       id: 9,
       img: godaddy,
     },
+    {
+      id: 10,
+      img: zap,
+    },
+    {
+      id: 11,
+      img: figma,
+    },
+    {
+      id: 12,
+      img: gpartner,
+    },
+    {
+      id: 13,
+      img: gcloud,
+    },
+    {
+      id: 14,
+      img: high,
+    },
+    {
+      id: 15,
+      img: twilo,
+    },
   ]
 
   return (
@@ -51,8 +75,8 @@ const Hero = () => {
       <Title title={'Our Partners in Your Success'}/>
       <Swiper
         className='w-full bg-white rounded-full p-2 h-[50px] sm:h-[80px]'
-        //   spaceBetween={15}
-        slidesPerView={7}
+          spaceBetween={15}
+        slidesPerView={10}
         navigation
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
@@ -65,7 +89,7 @@ const Hero = () => {
         // loop={true}
         speed={2000}>
         {data.map((item) => (
-          <SwiperSlide className='flex items-center justify-center'>
+          <SwiperSlide className='flex items-center justify-center space-x-3'>
                 <img src={item.img} className='' />
           </SwiperSlide>
         ))}

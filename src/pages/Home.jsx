@@ -1,10 +1,12 @@
-import React from 'react'
+
+import { useState } from 'react';
 import { Affordable, Banner, CallHero, Client, Design, Form, Hero, Info, Services } from '../components'
 import Featured from '../components/featured'
 import { designData, langData, servicesData } from '../constant'
 import { BUSINESS, DESIGN, designimg, Gif1 } from '../images'
 
 const Home = () => {
+    const [category, setCategory] = useState('web-development')
     return (
         <div className='overflow-hidden'>
             <Banner />
@@ -12,9 +14,10 @@ const Home = () => {
             <Services data={servicesData}
                 img={BUSINESS}
                 title={'first'}
+                setCategory={setCategory}
                 subtitle={'What we do Best!'}
             />
-            <Info />
+            <Info category={category} />
             <Design data={designData}
                 subtitle={''}
                 btn={false}

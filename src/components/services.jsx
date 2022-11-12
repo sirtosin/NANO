@@ -5,7 +5,7 @@ import Card from './card'
 import Title from './title'
 import Title2 from './title2'
 
-const Services = ({title,img,subtitle,data}) => {
+const Services = ({ title, img, subtitle, data, setCategory }) => {
   return (
     <div className='mb-20 relative'>
       <div className='-mt-2 lg:-mt-8 absolute -z-20 left-[35em] xl:left-[50em] 2xl:left-[80%]'>
@@ -27,6 +27,8 @@ const Services = ({title,img,subtitle,data}) => {
             title={item.title}
             body={item.body}
             key={item.id}
+            category={item.category}
+            setCategory={setCategory}
           />
         )}
       </div>

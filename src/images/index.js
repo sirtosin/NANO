@@ -199,9 +199,15 @@ import purple from "./purple.png";
 import check11 from "./check11.png";
 import vid1 from "./vid1.mp4";
 import vid2 from "./vid2.mp4";
+import figma from "./figma.png";
+import zap from "./zap.png";
+import gpartner from "./gpartner.png";
+import gcloud from "./gcloud.png";
+import twilo from "./twilo.png";
+import high from "./high.png";
 
 export {
-  arrow,seo,
+  arrow,seo,high,twilo,gcloud,gpartner,zap,figma,
   FEATURES,hand2,Gif1,Gif2,Gif3,Gif4,
   clock,red,yellow,green,purple,check11,vid1,
   blank,

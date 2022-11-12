@@ -127,7 +127,7 @@ const Header = () => {
           +1 (800) 361-2961
         </div>
         {/* mobile */}
-        <div className='flex lg:hidden'>
+        <div className='flex lg:hidden cursor-pointer'>
           {!menu ? <AiOutlineMenu onClick={toggle} className=' text-2xl font-bold' /> : <AiOutlineClose onClick={toggle} className='text-2xl text-red-500' />}
         </div>
 
