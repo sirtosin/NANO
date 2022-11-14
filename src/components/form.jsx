@@ -1,8 +1,42 @@
-import React from 'react'
-import { bball,blob, emailb, fbblack, insta, line, location, phone, pin } from '../images'
+import React, { useState } from 'react'
+import { bball, blob, email, emailb, fbblack, insta, line, location, phone, pin } from '../images'
+import { postApi } from '../utils/services'
 import CallHero from './callHero'
 
 const Form = () => {
+  const [inputFile, setInputFile] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
+
+  const handleForm = (e) => {
+    const value = e.target.value;
+    setInputFile({
+      ...inputFile,
+      [e.target.name]: value
+    });
+  }
+
+  const submitForm = (e) => {
+    console.log('inputFile', inputFile)
+    e.preventDefault()
+    const subPayload = {
+      name: inputFile.name,
+      email: inputFile.email,
+      message: inputFile.message
+    }
+    const payload = {
+      title: 'contact',
+      content: subPayload
+    }
+    postApi(payload).then((res) => console.log('res', res)).catch((err) => console.log('err', err))
+    setInputFile({
+      name: '',
+      email: '',
+      message: '',
+    })
+  }
   return (
     <div className='my-20'>
       <section className='lg:w-[850px] lg:mx-auto mb-4 h-max bg-white mx-3 shadow-lg p-5 flex space-y-3 md:items-center flex-col md:flex-row md:justify-between'>
@@ -27,7 +61,7 @@ const Form = () => {
               <img src={emailb} className='mr-2' alt="" />
               info@nanoqode.com
             </p>
-             <p className='flex items-center w-[250px]'>
+            <p className='flex items-center w-[250px]'>
               <img src={location} className='mr-2' alt="" />
               888 Sargent Ave
               Winnipeg, Manitoba, R3E 0C7, Canada
@@ -42,20 +76,23 @@ const Form = () => {
         </aside>
         <aside className='w-full flex-1'>
           <form className='relative'>
-              <div className='flex flex-col w-3/4'>
-                <label htmlFor="name" className='font-bold text-xl'>Full Name</label>
-                <input type="text" className='border-b-2 border-[#33333380] outline-none p-2' placeholder='John Doe' />
-              </div>
-              <div className='flex flex-col w-3/4'>
-                <label htmlFor="email" className='font-bold text-xl'>Email</label>
-                <input type="email" className='border-b-2 border-[#33333380] outline-none p-2' placeholder='itagencyc@gmail.com' />
-              </div>
-              <div className='flex flex-col w-3/4'>
-                <label htmlFor="name" className='font-bold text-xl'>Message</label>
-                <textarea type="text" className='resize-none border-b-2 border-[#33333380] outline-none p-2' placeholder='Write your message' />
-              </div>
+            <div className='flex flex-col w-3/4'>
+              <label htmlFor="name" className='font-bold text-xl'>Full Name</label>
+              <input name='name' type="text" onChange={handleForm} className='border-b-2 border-[#33333380] outline-none p-2' placeholder='John Doe' />
+            </div>
+            <div className='flex flex-col w-3/4'>
+              <label htmlFor="email" className='font-bold text-xl'>Email</label>
+              <input
+                name='email' onChange={handleForm} type="email" className='border-b-2 border-[#33333380] outline-none p-2' placeholder='itagencyc@gmail.com' />
+            </div>
+            <div className='flex flex-col w-3/4'>
+              <label htmlFor="message" className='font-bold text-xl'>Message</label>
+              <textarea name='message' type="text"
 
-            <button className='bg-[#5AA6B1] py-2 px-8 text-white mt-10'>Send message</button>
+                onChange={handleForm} className='resize-none border-b-2 border-[#33333380] outline-none p-2' placeholder='Write your message' />
+            </div>
+
+            <button onClick={submitForm} className='bg-[#5AA6B1] py-2 px-8 text-white mt-10'>Send message</button>
             <div className='absolute -right-5 -bottom-5'>
               <img src={blob} alt="" className='w-24 lg:w-40' />
             </div>

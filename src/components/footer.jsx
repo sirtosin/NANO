@@ -1,7 +1,18 @@
 import React from 'react'
 import { facebook, instaw, logo2, twitter, vimeo, youtube } from '../images'
+import { postApi } from '../utils/services'
 
 const Footer = () => {
+  const [email, setEmail] = useState('')
+  const submitForm = (e) => {
+    e.preventDefault()
+    const payload = {
+      title: 'newsletter',
+      content: email
+    }
+    postApi(payload).then((res) => console.log('res', res)).catch((err) => console.log('err', err))
+    setEmail('')
+  }
   return (
     <div className='bg-[#5AA6B1] w-full text-white
     '>
@@ -42,9 +53,9 @@ const Footer = () => {
           <p className='text-xs font-light'>
             Subscribe to our newsletter to get our news delivered to your inbox!
           </p>
-          <input type="email" placeholder='Enter your email' className='text-[#333333] p-2 outline-none border-none' />
+          <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Enter your email' className='text-[#333333] p-2 outline-none border-none' />
 
-          <button className='bg-[#DA4B27] py-2 px-8 text-white'>Subscribe</button>
+          <button onClick={submitForm} className='bg-[#DA4B27] py-2 px-8 text-white'>Subscribe</button>
         </section>
       </div>
       <div className='w-full h-0.5 bg-white' />
