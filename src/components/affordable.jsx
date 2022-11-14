@@ -6,12 +6,17 @@ import { arrow, arrow2, card, card2, card3, card4, check11, DEVELOPMENT, line, r
 
 const Affordable = () => {
   const slider = document.getElementById('slider')
+  const slideRef = useRef()
   const handleMoveNext = () => {
     slider.scrollLeft = slider.scrollLeft + 300
   }
   const handleMovePrev = () => {
    slider.scrollLeft = slider.scrollLeft - 300
   }
+  const scroll = (scrollOffset) => {
+    slideRef.current.scrollLeft += scrollOffset;
+    console.log('slideRef', slideRef)
+  };
 
   return (
     <div className='relative'>
@@ -24,17 +29,17 @@ const Affordable = () => {
           <img src={DEVELOPMENT} alt="" />
         </div>
         <div className='hidden md:flex items-center space-x-4 relative ml-32 z-30' >
-          <div onClick={handleMovePrev} className='w-[50px] h-[50px] rounded-full border-[#DA452C] bg-transparent flex items-center justify-center border-2'>
+          <div onClick={() =>scroll(-100)} className='w-[50px] h-[50px] rounded-full border-[#DA452C] bg-transparent flex items-center justify-center border-2'>
             <img  className='cursor-pointer' src={arrow} alt="" />
           </div>
-          <div onClick={handleMoveNext} className='w-[50px] h-[50px] rounded-full border-[#DA452C] bg-transparent flex items-center justify-center border-2'>
+          <div onClick={() => scroll(100)} className='w-[50px] h-[50px] rounded-full border-[#DA452C] bg-transparent flex items-center justify-center border-2'>
             <img className='cursor-pointer' src={arrow2} alt="" />
           </div>
         </div>
         <section id='slider' className='overflow-x-scroll w-full scrollbar-hide  overflow-y-hidden scroll whitespace-nowrap scroll-smooth flex items-center flex-col justify-center md:grid grid-cols-2 lg:flex lg:flex-row  lg:space-x-4 mb-20 ml-6'>
           {priceData.map((item) =>
             <Link to={`${item.link}`}>
-            <div key={item.id} className=' z-20 relative'>
+            <div ref={slideRef} key={item.id} className=' z-20 relative'>
               <img src={item.img} className='w-60' alt="" />
               <div className='absolute top-2'>
                 <h1 className='text-6xl mb-16 text-center text-white relative ml-16 mt-5'> <span className='top-2 -ml-3 text-xl font-light absolute'>$</span>

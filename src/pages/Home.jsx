@@ -30,7 +30,7 @@ const Home = () => {
                 <Featured
                     color={'#FBE9E5'}
                     color2={'white'}
-                    data={langData} title={'Our Partners in Your Success'} />
+                    data={langData} title={'Featured Clients'} />
             </div>
             <CallHero />
             <Form />

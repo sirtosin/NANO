@@ -13,7 +13,7 @@ const Featured = ({title,data,color,color2,center}) => {
       <div style={{
           background:color
       }} className={center ? ' w-full h-[200px]  sm:h-[362px] p-5 items-center justify-center flex space-y-5 flex-col' :' w-full h-[200px] sm:h-[362px] p-5 flex items-center justify-center space-y-5 flex-col'}>
-          <Title title={'Our Partners in Your Success'} center={false} />
+          <Title title={title} center={false} />
           <Swiper
               style={{
                   background:color2
