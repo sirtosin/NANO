@@ -53,7 +53,7 @@ const Footer = () => {
           <p className='text-xs font-light'>
             Subscribe to our newsletter to get our news delivered to your inbox!
           </p>
-          <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Enter your email' className='text-[#333333] p-2 outline-none border-none' />
+          <input onChange={(e) => setEmail(e.target.value)} type="email" value={email}placeholder='Enter your email' className='text-[#333333] p-2 outline-none border-none' />
 
           <button onClick={submitForm} className='bg-[#DA4B27] py-2 px-8 text-white'>Subscribe</button>
         </section>

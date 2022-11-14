@@ -34,8 +34,8 @@ const WebBanner2 = ({ title, title3, title2, body, img, show, gif, vid }) => {
 
     const handleForm2 = (e) => {
         const value = e.target.value;
-        setInputFile({
-            ...inputFile,
+        setInputFile2({
+            ...inputFile2,
             [e.target.name]: value
         });
     }
@@ -110,7 +110,7 @@ const WebBanner2 = ({ title, title3, title2, body, img, show, gif, vid }) => {
                         {step === 0 && <div className='flex flex-col h-max bg-transparent w-[304px] border-[#DA452C] border-[1px] mt-20 mb-10 p-5 rounded-full '> <div className=''>
 
                             <div className='flex items-center justify-between'>
-                                <input type="text" placeholder='website' onChange={handleForm} name='website' className='mx-2 bg-transparent outline-none border-b-2 flex-1' />
+                                <input type="text" value={inputFile.website} placeholder='website' onChange={handleForm} name='website' className='mx-2 bg-transparent outline-none border-b-2 flex-1' />
                                 <img src={down} alt="" />
                             </div>
                         </div>
@@ -118,7 +118,7 @@ const WebBanner2 = ({ title, title3, title2, body, img, show, gif, vid }) => {
                         {step === 1 && <div className='flex flex-col h-max bg-transparent w-[304px] border-[#DA452C] border-[1px] mt-20 mb-10 p-5 rounded-full'><div className=''>
 
                             <div className='flex items-center justify-between'>
-                                <input type="email" placeholder='email' onChange={handleForm} name="email" className='mx-2 bg-transparent outline-none border-b-2 flex-1' />
+                                <input type="email" value={inputFile.email} placeholder='email' onChange={handleForm} name="email" className='mx-2 bg-transparent outline-none border-b-2 flex-1' />
                                 <img src={down} alt="" />
                             </div>
                         </div>
@@ -126,7 +126,7 @@ const WebBanner2 = ({ title, title3, title2, body, img, show, gif, vid }) => {
                         {step === 2 && <div className='flex flex-col h-max bg-transparent w-[304px] border-[#DA452C] border-[1px] mt-20 mb-10 p-5 rounded-full '><div className=''>
 
                             <div className='flex items-center justify-between'>
-                                <input type='number' placeholder='phone number' onChange={handleForm} name='phone' className='mx-2 bg-transparent outline-none border-b-2 flex-1' />
+                                <input type='number' value={inputFile.phone} placeholder='phone number' onChange={handleForm} name='phone' className='mx-2 bg-transparent outline-none border-b-2 flex-1' />
                                 <img src={down} alt="" />
                             </div>
                         </div>
@@ -134,7 +134,7 @@ const WebBanner2 = ({ title, title3, title2, body, img, show, gif, vid }) => {
                         {step === 3 && <div className='flex flex-col h-max bg-transparent w-[304px] border-[#DA452C] border-[1px] mt-20 mb-10 p-5 rounded-full '><div className=''>
 
                             <div className='flex items-center justify-between'>
-                                <input placeholder='full name' onChange={handleForm} name='name' type="text" className='mx-2 bg-transparent outline-none border-b-2 flex-1' />
+                                <input placeholder='full name' value={inputFile.name} onChange={handleForm} name='name' type="text" className='mx-2 bg-transparent outline-none border-b-2 flex-1' />
                                 <img src={down} alt="" />
                             </div>
                         </div>
@@ -143,24 +143,26 @@ const WebBanner2 = ({ title, title3, title2, body, img, show, gif, vid }) => {
                         <div className='bg-[#EBF4F6] w-full md:-ml-6 lg:ml-0 sm:w-[400px] h-max  p-8 rounded-lg flex flex-col space-y-3'>
                             <div className='bg-transparent w-full border-[#DA452C] border-[1px]  px-6 py-2 rounded-full flex flex-col '>
 
-                                <input type="text" placeholder='email'
+                                <input type="text" value={inputFile2.email} placeholder='email'
                                     onChange={handleForm2}  name='email' className='bg-transparent outline-none border-b-2 ' />
                             </div>
                             <aside className='flex items-center space-x-4 w-full'>
                                 <div className='bg-transparent w-1/2 border-[#DA452C] border-[1px]  px-4 py-1 rounded-full flex flex-col'>
 
-                                    <input placeholder='firstname' type="text" onChange={handleForm2} name='firstname' className='bg-transparent outline-none border-b-2 ' />
+                                    <input placeholder='firstname' value={inputFile2.firstname} type="text" onChange={handleForm2} name='firstname' className='bg-transparent outline-none border-b-2 ' />
                                 </div>      <div className='bg-transparent w-1/2 border-[#DA452C] border-[1px]  px-4 py-1  rounded-full flex flex-col'>
 
-                                    <input placeholder='lastname' type="text" onChange={handleForm2} name='lastname' className='bg-transparent outline-none border-b-2 ' />
+                                    <input placeholder='lastname' value={inputFile2.lastname} type="text" onChange={handleForm2} name='lastname' className='bg-transparent outline-none border-b-2 ' />
                                 </div>
                             </aside>
                             <aside className='flex items-center space-x-4 w-full'>
                                 <div className='bg-transparent w-1/2 border-[#DA452C] border-[1px]  px-4 py-1 rounded-full flex flex-col'>
 
-                                    <input placeholder='city' type="text" onChange={handleForm2} name='city' className='bg-transparent outline-none border-b-2 ' />
+                                    <input placeholder='city' value={inputFile2.city} type="text" onChange={handleForm2} name='city' className='bg-transparent outline-none border-b-2 ' />
                                 </div>      <div className='bg-transparent w-1/2 border-[#DA452C] border-[1px]  px-4 py-1 rounded-full flex flex-col'>
-                                    <input type="number" placeholder='phone number' onChange={handleForm2} name='phone' className='bg-transparent outline-none border-b-2 ' />
+                                    <input type="number" value={inputFile2.phone} placeholder='phone number'
+                                        
+                                        onChange={handleForm2} name='phone' className='bg-transparent outline-none border-b-2 ' />
                                 </div>
                             </aside>
                             <button onClick={submitForm2} className=' border-2 text-white bg-[#5AA6B1] my-10 w-3/4 rounded-lg p-2 lg:p-4 text-sm'>Start your 7-Days Free trial</button>
